@@ -19,21 +19,25 @@ export class ReservationService {
 
   getReservation(id: string): Reservation | undefined {
     return this.reservations.find(res => res.id === id);
+    console.log(this.reservations);
   }
 
   addReservation(reservation:Reservation) : void{
     this.reservations.push(reservation);
+    console.log(this.reservations);
   }
 
   deleteReservation(id: string): void{
     let index = this.reservations.findIndex(res => res.id === id); 
     this.reservations.splice(index,1);
+    console.log(this.reservations);
   }
 
 
   updateReservation(updatedReservation:Reservation): void {
     let index = this.reservations.findIndex(res => res.id === updatedReservation.id); 
     this.reservations[index] = updatedReservation;
+    console.log(this.reservations);
   }
 
 
